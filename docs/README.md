@@ -8,4 +8,4 @@ Fejlesztő [weblapja](http://vitamas.hu) és [blogja](http://blog.vitamas.hu)
 
 ## Információk
 
-Hamarosan. :)
+[Wiki](https://github.com/vitozy/eNoteszAppPC/wiki)
