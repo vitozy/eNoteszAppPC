@@ -5,8 +5,6 @@ Az eNotesz egy elektronikus notesz applikáció. A program célja, hogy egy hely
 A webes projekt weblapja: [enotesz.vitamas.hu](https://enotesz.vitamas.hu).<br>
 A fejlesztő [weblapja](http://vitamas.hu) és [blogja](http://blog.vitamas.hu).
 
-
-
 ## Szerzői jog és képinformációk
 
 A projekt Vincze Tamás Zoltán tulajdona, annak bármilyen felhasználása a license-ben foglaltak alapján lehetséges, e-mailes vagy egyéb írásbeli egyeztetés után, a szerző nevének feltüntetésével.
@@ -16,7 +14,7 @@ A projekt Vincze Tamás Zoltán tulajdona, annak bármilyen felhasználása a li
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-A projekt 1.0-ás változata a [Debreceni Egyetem Informatikai Kar](http://inf.unideb.hu) 2016/17/2-es félév [Programozási technológiák](https://arato.inf.unideb.hu/jeszenszky.peter/wiki/doku.php?id=oktatas:prt) és [Programozási környezetek](https://arato.inf.unideb.hu/jeszenszky.peter/wiki/doku.php?id=oktatas:progkorny) tantárgyak beadandójaként készült el. A későbbiekben szeretném tovább fejleszteni.
+A projekt 1.0-ás változata a [Debreceni Egyetem Informatikai Kar](https://www.inf.unideb.hu) 2016/17/2-es félév [Programozási technológiák](https://arato.inf.unideb.hu/jeszenszky.peter/wiki/doku.php?id=oktatas:prt) és [Programozási környezetek](https://arato.inf.unideb.hu/jeszenszky.peter/wiki/doku.php?id=oktatas:progkorny) tantárgyak beadandójaként készült el. A későbbiekben szeretném tovább fejleszteni.
 
 ### Nem saját képek:
 * Font Awesome iconset @ [fontawesome.io](http://fontawesome.io)
