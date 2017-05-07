@@ -1,6 +1,7 @@
 ## :green_book: eNotesz Desktop App
 
 ![Version](https://img.shields.io/badge/version-1.0-green.svg)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Az eNotesz egy elektronikus notesz applikáció. A program célja, hogy egy helyen és bárhonnan elérhetőek legyenek az eseményeid, a teendőid. A későbbiekben pedig sok más hasonlóan hasznos funkció. Az eNotesz egy webes és desktop applikáció. Ez a repository a desktop applikáció fejlesztése miatt jött létre egy egyetemi beadandó keretében (2017), a későbbiekben azonban tovább szeretném fejleszteni.
 
@@ -15,8 +16,6 @@ A projekt Vincze Tamás Zoltán tulajdona, annak bármilyen felhasználása a li
 
 <b>Vincze Tamás Zoltán © 2017</b><br>
 [www.vitamas.hu](http://www.vitamas.hu) :: prog@vitamas.hu<br>
-
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 A projekt 1.0-ás változata a [Debreceni Egyetem Informatikai Kar](https://www.inf.unideb.hu) 2016/17/2-es félév [Programozási technológiák](https://arato.inf.unideb.hu/jeszenszky.peter/wiki/doku.php?id=oktatas:prt) és [Programozási környezetek](https://arato.inf.unideb.hu/jeszenszky.peter/wiki/doku.php?id=oktatas:progkorny) tantárgyak [beadandójaként](https://github.com/vitozy/enotesz-desktop/wiki/Beadandó-információk) készült el. A későbbiekben szeretném tovább fejleszteni.
 
