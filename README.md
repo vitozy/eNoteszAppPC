@@ -1,5 +1,7 @@
 ## :green_book: eNotesz Desktop App
 
+![Version](https://img.shields.io/badge/version-1.0-green.svg)
+
 Az eNotesz egy elektronikus notesz applikáció. A program célja, hogy egy helyen és bárhonnan elérhetőek legyenek az eseményeid, a teendőid. A későbbiekben pedig sok más hasonlóan hasznos funkció. Az eNotesz egy webes és desktop applikáció. Ez a repository a desktop applikáció fejlesztése miatt jött létre egy egyetemi beadandó keretében (2017), a későbbiekben azonban tovább szeretném fejleszteni.
 
 A webes projekt weblapja: [enotesz.vitamas.hu](https://enotesz.vitamas.hu).<br>
