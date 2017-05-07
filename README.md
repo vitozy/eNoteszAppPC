@@ -20,6 +20,6 @@ A projekt Vincze Tamás Zoltán tulajdona, annak bármilyen felhasználása a li
 
 ## Changelog
 
-[Changelog megtekintése](wiki/Changelog)
+[Changelog megtekintése](https://github.com/vitozy/enotesz-desktop/wiki/Changelog)
 
 
