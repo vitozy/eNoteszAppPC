@@ -1,16 +1,22 @@
-## eNotesz Desktop App
+## :green_book: eNotesz Desktop App
 
-Ez egy webes projekt JavaFX alapú változata desktopra tervezve.
+Az eNotesz egy elektronikus notesz applikáció. A program célja, hogy egy helyen és bárhonnan elérhetőek legyenek az eseményeid, a teendőid. A későbbiekben pedig sok más hasonlóan hasznos funkció. Az eNotesz egy webes és desktop applikáció. Ez a repository a desktop applikáció fejlesztése miatt jött létre egy egyetemi beadandó keretében (2017), a későbbiekben azonban tovább szeretném fejleszteni.
 
-A webes projekt weblapja: [enotesz.vitamas.hu](https://enotesz.vitamas.hu)
+A webes projekt weblapja: [enotesz.vitamas.hu](https://enotesz.vitamas.hu).<br>
+A fejlesztő [weblapja](http://vitamas.hu) és [blogja](http://blog.vitamas.hu).
 
-Fejlesztő [weblapja](http://vitamas.hu) és [blogja](http://blog.vitamas.hu)
+
 
 ## Szerzői jog és képinformációk
 
 A projekt Vincze Tamás Zoltán tulajdona, annak bármilyen felhasználása a license-ben foglaltak alapján lehetséges, e-mailes vagy egyéb írásbeli egyeztetés után, a szerző nevének feltüntetésével.
 
+<b>Vincze Tamás Zoltán © 2017</b><br>
+[www.vitamas.hu](http://www.vitamas.hu) :: prog@vitamas.hu<br>
+
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+A projekt 1.0-ás változata a [Debreceni Egyetem Informatikai Kar](http://inf.unideb.hu) 2016/17/2-es félév [Programozási technológiák](https://arato.inf.unideb.hu/jeszenszky.peter/wiki/doku.php?id=oktatas:prt) és [Programozási környezetek](https://arato.inf.unideb.hu/jeszenszky.peter/wiki/doku.php?id=oktatas:progkorny) tantárgyak beadandójaként készült el. A későbbiekben szeretném tovább fejleszteni.
 
 ### Nem saját képek:
 * Font Awesome iconset @ [fontawesome.io](http://fontawesome.io)
