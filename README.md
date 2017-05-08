@@ -8,7 +8,7 @@ Az eNotesz egy elektronikus notesz applikáció. A program célja, hogy egy hely
 A webes projekt weblapja: [enotesz.vitamas.hu](https://enotesz.vitamas.hu).<br>
 A fejlesztő [weblapja](http://vitamas.hu) és [blogja](http://blog.vitamas.hu).
 
-Bővebb információk a <b>WIKI</b> oldalon találhatóak.
+Bővebb információk a [WIKI](https://github.com/vitozy/enotesz-desktop/wiki) oldalon találhatóak.
 
 ## Szerzői jog és képinformációk
 
@@ -22,8 +22,11 @@ A projekt 1.0-ás változata a [Debreceni Egyetem Informatikai Kar](https://www.
 ### Nem saját képek:
 * Font Awesome iconset @ [fontawesome.io](http://fontawesome.io)
 * Ligature Symbols iconset @ [kudakurage.com/ligature_symbols](http://kudakurage.com/ligature_symbols/)
+* Material iconset @ [material.io/icons/](https://material.io/icons/)
 * Fonts to PNG format @ [fa2png.io](http://fa2png.io)
 * Other icons from Freepik's FlatIcon website. @ [www.flaticon.com](http://flaticon.com)
+
+More information: [wiki/Credits](https://github.com/vitozy/enotesz-desktop/wiki/Credits).
 
 ## Changelog
 
