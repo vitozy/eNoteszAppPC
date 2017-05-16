@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import hu.vitamas.enotesz.*?>
+<?import javafx.collections.*?>
+<?import java.net.*?>
+
+<AnchorPane fx:id="AnchorPane" prefHeight="280.0" prefWidth="495.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.vitamas.enotesz.controller.UserController">
+   <children>
+      <Label alignment="CENTER" layoutY="10.0" prefHeight="38.0" prefWidth="495.0" styleClass="window-title" text="Felhasználói fiók" textAlignment="CENTER">
+			<graphic>
+				<ImageView fitHeight="13" fitWidth="13">
+					<image>
+						<Image url="@../../images/fa-user-15px.png" />
+					</image>
+				</ImageView>
+			</graphic>
+			<font>
+				<Font name="System Bold" size="15.0" />
+			</font>
+		</Label>
+      <Label layoutX="16.0" layoutY="73.0" prefHeight="29.0" prefWidth="124.0" text="Felhasználói név:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="16.0" layoutY="102.0" prefHeight="29.0" prefWidth="124.0" text="Felhasználói ID:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="16.0" layoutY="131.0" prefHeight="29.0" prefWidth="124.0" text="E-mail cím:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="userName" layoutX="140.0" layoutY="73.0" prefHeight="29.0" prefWidth="329.0" text="lekérdezés folyamatban..." />
+      <Label fx:id="userID" layoutX="140.0" layoutY="102.0" prefHeight="29.0" prefWidth="329.0" text="lekérdezés folyamatban..." />
+      <Label fx:id="userEmail" layoutX="140.0" layoutY="131.0" prefHeight="29.0" prefWidth="329.0" text="lekérdezés folyamatban..." />
+      <Button fx:id="changeDetail" layoutX="14.0" layoutY="185.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="205.0" text="Adatok módosítása">
+         <styleClass>
+            <String fx:value="btn" />
+            <String fx:value="btn-light" />
+            <String fx:value="btn-small" />
+         </styleClass>
+      </Button>
+      <Button fx:id="changePassword" layoutX="14.0" layoutY="222.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="205.0" text="Jelszó megváltoztatása">
+         <styleClass>
+            <String fx:value="btn" />
+            <String fx:value="btn-light" />
+            <String fx:value="btn-small" />
+         </styleClass>
+      </Button>
+      <Button fx:id="refresh" layoutX="339.0" layoutY="222.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="130.0" text="Adatok frissítése">
+         <styleClass>
+            <String fx:value="btn" />
+            <String fx:value="btn-light" />
+            <String fx:value="btn-small" />
+         </styleClass>
+      </Button>
+   </children>
+   <stylesheets>
+      <URL value="@../../styles/common.css" />
+      <URL value="@../../styles/subwindow.css" />
+   </stylesheets>
+</AnchorPane>

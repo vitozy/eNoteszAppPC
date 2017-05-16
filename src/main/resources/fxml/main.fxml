@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import hu.vitamas.enotesz.*?>
+<?import javafx.collections.*?>
+<?import java.net.*?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.vitamas.enotesz.controller.AppController">
+	<children>
+		<SplitPane fx:id="split" dividerPositions="0.08161258603736479" prefHeight="598.0" prefWidth="1040.0">
+			<items>
+				<AnchorPane maxWidth="80.0" minHeight="598.0" minWidth="80.0" prefHeight="598.0" prefWidth="80.0">
+					<children>
+						<ImageView fitHeight="69.0" fitWidth="53.0" layoutX="22.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+							<image>
+								<Image url="@../images/logo.png" />
+							</image>
+						</ImageView>
+						<Label alignment="CENTER" layoutX="8.0" layoutY="67.0" prefHeight="27.0" prefWidth="67.0" text="eNotesz" textAlignment="CENTER">
+							<font>
+								<Font name="System Bold" size="14.0" />
+							</font>
+						</Label>
+						<Button fx:id="settingsBtn" layoutX="15.0" layoutY="410.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0">
+							<graphic>
+								<ImageView fitHeight="30.0" fitWidth="30" layoutX="25.0" layoutY="539.0">
+									<image>
+										<Image url="@../images/fa-cogs-50px.png" />
+									</image>
+								</ImageView>
+							</graphic>
+							<styleClass>
+								<String fx:value="btn" />
+								<String fx:value="btn-menu" />
+							</styleClass>
+						</Button>
+						<Button fx:id="helpBtn" layoutX="15.0" layoutY="470.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0">
+							<graphic>
+								<ImageView fitHeight="30.0" fitWidth="30" layoutX="25.0" layoutY="539.0">
+									<image>
+										<Image url="@../images/material-infofull-50px.png" />
+									</image>
+								</ImageView>
+							</graphic>
+							<styleClass>
+								<String fx:value="btn" />
+								<String fx:value="btn-menu" />
+							</styleClass>
+						</Button>
+						<Button fx:id="exitBtn" layoutX="15.0" layoutY="530.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0">
+							<graphic>
+								<ImageView fitHeight="30.0" fitWidth="30" layoutX="25.0" layoutY="539.0">
+									<image>
+										<Image url="@../images/lsf-logout-50px.png" />
+									</image>
+								</ImageView>
+							</graphic>
+							<styleClass>
+								<String fx:value="btn" />
+								<String fx:value="btn-menu" />
+							</styleClass>
+						</Button>
+                  </children>
+				</AnchorPane>
+				<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="927.0">
+					<children>
+						<TabPane prefHeight="600.0" prefWidth="952.0" style="-fx-background-color: #DDDDDD;" tabClosingPolicy="UNAVAILABLE">
+							<tabs>
+								<Tab id="home-tab" style=" -fx-border-radius: 15 0 0 0; -fx-background-radius: 15 0 0 0;" text="Áttekintő">
+									<graphic>
+										<ImageView fitHeight="15" fitWidth="15">
+											<image>
+												<Image url="@../images/fa-home-15px.png" />
+											</image>
+										</ImageView>
+									</graphic>
+									<content>
+										<fx:include fx:id="overviewTab" source="include/overview.fxml" />
+									</content>
+								</Tab>
+								<Tab id="events-tab" text="Események">
+									<graphic>
+										<ImageView fitHeight="15" fitWidth="15">
+											<image>
+												<Image url="@../images/fa-calendar-15px.png" />
+											</image>
+										</ImageView>
+									</graphic>
+									<content>
+										<fx:include fx:id="eventsTab" source="include/events.fxml" />
+									</content>
+								</Tab>
+								<Tab id="tasks-tab" style="-fx-border-width: 1; -fx-border-radius: 0 15 0 0; -fx-background-radius: 0 15 0 0;" text="Teendők">
+									<graphic>
+										<ImageView fitHeight="15" fitWidth="15">
+											<image>
+												<Image url="@../images/fa-check-15px.png" />
+											</image>
+										</ImageView>
+									</graphic>
+									<content>
+										<fx:include fx:id="tasksTab" source="include/tasks.fxml" />
+									</content>
+								</Tab>
+							</tabs>
+						</TabPane>
+					</children>
+				</AnchorPane>
+			</items>
+		</SplitPane>
+		<ProgressIndicator fx:id="progress" layoutX="15.0" layoutY="107.0" prefHeight="50.0" prefWidth="50.0" progress="-1.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="107.0" />
+	</children>
+	<stylesheets>
+      <URL value="@../styles/common.css" />
+      <URL value="@../styles/mainwindow.css" />
+   </stylesheets>
+</AnchorPane>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import hu.vitamas.enotesz.*?>
+<?import javafx.collections.*?>
+<?import java.net.*?>
+
+<AnchorPane prefHeight="325.0" prefWidth="676.0" style="-fx-background-color: #eee;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.vitamas.enotesz.controller.LoginController">
+	<children>
+		<Pane prefHeight="325.0" prefWidth="302.0" style="-fx-background-color: lightgreen;">
+			<children>
+				<ImageView fitHeight="122.0" fitWidth="90.0" layoutX="117.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image url="@../images/logo.png" />
+					</image>
+				</ImageView>
+				<Label alignment="CENTER" layoutY="147.0" prefHeight="45.0" prefWidth="296.0" text="eNotesz">
+					<font>
+						<Font name="System Bold" size="30.0" />
+					</font>
+				</Label>
+				<Label alignment="CENTER" layoutY="179.0" prefHeight="45.0" prefWidth="296.0" text="Legyél mindig naprakész!">
+					<font>
+						<Font name="System Bold" size="20.0" />
+					</font>
+				</Label>
+            <Button fx:id="smallwebBtn" alignment="CENTER_LEFT" layoutX="45.0" layoutY="250.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" style="-fx-padding: 5 5 5 12;">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0">
+                     <image>
+                        <Image url="@../images/material-globe-20px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="btn-light" />
+               </styleClass>
+               <tooltip>
+                  <Tooltip autoHide="true" text="Projekt weblapja" />
+               </tooltip>
+            </Button>
+            <Button fx:id="smallcopyBtn" alignment="CENTER_LEFT" layoutX="100.0" layoutY="250.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" style="-fx-padding: 5 5 5 12;">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0">
+                     <image>
+                        <Image url="@../images/material-copy-20px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="btn-light" />
+               </styleClass>
+               <tooltip>
+                  <Tooltip autoHide="true" text="Credits" />
+               </tooltip>
+            </Button>
+            <Button fx:id="smallcontactBtn" alignment="CENTER_LEFT" layoutX="155.0" layoutY="250.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" style="-fx-padding: 5 5 5 12;">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0">
+                     <image>
+                        <Image url="@../images/material-mail-20px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="btn-light" />
+               </styleClass>
+               <tooltip>
+                  <Tooltip autoHide="true" text="Kapcsolat a fejlesztővel" />
+               </tooltip>
+            </Button>
+            <Button fx:id="smallcodeBtn" alignment="CENTER_LEFT" layoutX="210.0" layoutY="250.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" style="-fx-padding: 5 5 5 12;">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0">
+                     <image>
+                        <Image url="@../images/material-code-20px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="btn-light" />
+               </styleClass>
+               <tooltip>
+                  <Tooltip autoHide="true" text="Projekt információk a Githubon" />
+               </tooltip>
+            </Button>
+			</children>
+		</Pane>
+		<TextField fx:id="userName" focusTraversable="false" layoutX="343.0" layoutY="35.0" prefHeight="37.0" prefWidth="284.0" promptText="Felhasználó név">
+			<font>
+				<Font size="16.0" />
+			</font>
+			<styleClass>
+				<String fx:value="input" />
+			</styleClass>
+		</TextField>
+		<PasswordField fx:id="userPassword" focusTraversable="false" layoutX="343.0" layoutY="79.0" prefHeight="37.0" prefWidth="284.0" promptText="Jelszó">
+			<font>
+				<Font size="16.0" />
+			</font>
+			<styleClass>
+				<String fx:value="input" />
+			</styleClass>
+		</PasswordField>
+		<Button fx:id="loginBtn" layoutX="343.0" layoutY="127.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="284.0" text="Bejelentkezés a felületre">
+			<font>
+				<Font name="System Bold" size="15.0" />
+			</font>
+			<styleClass>
+				<String fx:value="btn" />
+				<String fx:value="btn-dark" />
+			</styleClass>
+		</Button>
+		<Button fx:id="registerBtn" alignment="CENTER_LEFT" layoutX="343.0" layoutY="226.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="284.0" style="-fx-padding: 5 5 5 15" text="Új fiók létrehozása">
+			<font>
+				<Font name="System Bold" size="12.0" />
+			</font>
+			<styleClass>
+				<String fx:value="btn" />
+				<String fx:value="btn-light" />
+			</styleClass>
+			<graphic>
+				<ImageView fitHeight="13" fitWidth="13">
+					<image>
+						<Image url="@../images/fa-plus-15px.png" />
+					</image>
+				</ImageView>
+			</graphic>
+		</Button>
+		<Button fx:id="openwebBtn" alignment="CENTER_LEFT" layoutX="343.0" layoutY="266.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="284.0" style="-fx-padding: 5 5 5 15" text="Webes felület megnyitása">
+			<font>
+				<Font name="System Bold" size="12.0" />
+			</font>
+			<styleClass>
+				<String fx:value="btn" />
+				<String fx:value="btn-light" />
+			</styleClass>
+			<graphic>
+				<ImageView fitHeight="13" fitWidth="13">
+					<image>
+						<Image url="@../images/fa-home-15px.png" />
+					</image>
+				</ImageView>
+			</graphic>
+		</Button>
+	</children>
+	<stylesheets>
+      <URL value="@../styles/common.css" />
+   </stylesheets>
+</AnchorPane>

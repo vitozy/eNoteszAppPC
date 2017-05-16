@@ -1,0 +1,8 @@
+security.apiKey=xxxxxxxxxxxxx
+security.apiLink=xxxxxxxxxxxx
+project.name=eNotesz
+project.version=x.x.x-x
+database.username=xxxxxxx
+database.password=xxxxxxxxx
+database.host=xxxxxxx
+database.dbname=xxxxxx

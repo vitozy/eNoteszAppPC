@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import hu.vitamas.enotesz.*?>
+<?import javafx.collections.*?>
+<?import java.net.*?>
+
+<AnchorPane fx:id="AnchorPane" prefHeight="563.0" prefWidth="765.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.vitamas.enotesz.controller.TasksGroupController">
+	<children>
+		<Label fx:id="groupViewTitle" alignment="CENTER" layoutX="14.0" layoutY="22.0" prefHeight="26.0" prefWidth="713.0" text="eNotesz - Teendőlista:  nincs" textAlignment="CENTER">
+			<font>
+				<Font name="System Bold" size="15.0" />
+			</font>
+		</Label>
+		<Label fx:id="groupViewTitle" alignment="CENTER" layoutY="10.0" prefHeight="43.0" prefWidth="765.0" styleClass="window-title" text="Teendőlista:  nincs" textAlignment="CENTER">
+			<font>
+				<Font name="System Bold" size="15.0" />
+			</font>
+		</Label>
+		<TitledPane fx:id="eventText" animated="false" collapsible="false" layoutX="14.0" layoutY="74.0" prefHeight="416.0" prefWidth="389.0" text="Teendők listája">
+			<content>
+				<AnchorPane fx:id="tasks" minHeight="0.0" minWidth="0.0" prefHeight="402.0" prefWidth="387.0" />
+			</content>
+		</TitledPane>
+		<TitledPane fx:id="eventInfo" animated="false" collapsible="false" layoutX="421.0" layoutY="74.0" prefHeight="416.0" prefWidth="331.0" text="Teendő megtekintése">
+			<content>
+				<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="128.0" prefWidth="299.0">
+					<children>
+						<Label layoutX="6.0" layoutY="8.0" prefHeight="26.0" prefWidth="82.0" text="Név:" />
+						<Label layoutX="6.0" layoutY="34.0" prefHeight="26.0" prefWidth="82.0" text="Határidő:" />
+						<Label layoutX="6.0" layoutY="60.0" prefHeight="26.0" prefWidth="82.0" text="Fontosság:" />
+						<Label fx:id="taskTitle" layoutX="90.0" layoutY="8.0" prefHeight="26.0" prefWidth="227.0" text="nincs" />
+						<Label fx:id="taskDeadline" layoutX="90.0" layoutY="34.0" prefHeight="26.0" prefWidth="227.0" text="nincs határidő" />
+						<Label fx:id="taskPriority" layoutX="89.0" layoutY="60.0" prefHeight="26.0" prefWidth="227.0" text="Általános" />
+						<TextFlow fx:id="taskText" layoutX="6.0" layoutY="92.0" prefHeight="236.0" prefWidth="310.0" />
+						<Button fx:id="taskEditBtn" layoutX="57.0" layoutY="338.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" style="-fx-background-radius: 5 0 0 5; -fx-border-radius: 5 0 0 5;" text="Szerkesztés">
+							<graphic>
+								<ImageView fitHeight="13" fitWidth="13">
+									<image>
+										<Image url="@../../images/fa-pencil-15px.png" />
+									</image>
+								</ImageView>
+							</graphic>
+							<styleClass>
+								<String fx:value="btn" />
+								<String fx:value="btn-light" />
+								<String fx:value="btn-small" />
+							</styleClass>
+						</Button>
+						<Button fx:id="taskDeleteBtn" layoutX="187.0" layoutY="338.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" style="-fx-background-radius: 0 5 5 0; -fx-border-radius: 0 5 5 0;" text="Törlés">
+							<graphic>
+								<ImageView fitHeight="13" fitWidth="13">
+									<image>
+										<Image url="@../../images/fa-trash-15px.png" />
+									</image>
+								</ImageView>
+							</graphic>
+							<styleClass>
+								<String fx:value="btn" />
+								<String fx:value="btn-light" />
+								<String fx:value="btn-small" />
+							</styleClass>
+						</Button>
+					</children>
+				</AnchorPane>
+			</content>
+		</TitledPane>
+		<Button fx:id="taskgroupDeleteBtn" layoutX="421.0" layoutY="506.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" style="-fx-background-radius: 5 0 0 5; -fx-border-radius: 5 0 0 5;" text="Lista törlése">
+			<graphic>
+				<ImageView fitHeight="13" fitWidth="13">
+					<image>
+						<Image url="@../../images/fa-trash-15px.png" />
+					</image>
+				</ImageView>
+			</graphic>
+			<styleClass>
+				<String fx:value="btn" />
+				<String fx:value="btn-light" />
+				<String fx:value="btn-small" />
+			</styleClass>
+		</Button>
+		<Button fx:id="taskgroupEditBtn" layoutX="556.0" layoutY="506.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" style="-fx-background-radius: 0; -fx-border-radius: 0; -fx-border-width: 1 1 1 0;" text="Átnevezés">
+			<graphic>
+				<ImageView fitHeight="13" fitWidth="13">
+					<image>
+						<Image url="@../../images/fa-pencil-15px.png" />
+					</image>
+				</ImageView>
+			</graphic>
+			<styleClass>
+				<String fx:value="btn" />
+				<String fx:value="btn-light" />
+				<String fx:value="btn-small" />
+			</styleClass>
+		</Button>
+		<Button fx:id="refreshBtn" layoutX="690.0" layoutY="506.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" style="-fx-background-radius: 0 5 5 0; -fx-border-radius: 0 5 5 0;">
+			<graphic>
+				<ImageView fitHeight="13" fitWidth="13">
+					<image>
+						<Image url="@../../images/fa-refresh-15px.png" />
+					</image>
+				</ImageView>
+			</graphic>
+			<styleClass>
+				<String fx:value="btn" />
+				<String fx:value="btn-light" />
+				<String fx:value="btn-small" />
+			</styleClass>
+		</Button>
+		<Button fx:id="createTaskBtn" layoutX="14.0" layoutY="506.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="214.0" text="Új teendő létrehozása">
+			<graphic>
+				<ImageView fitHeight="13" fitWidth="13">
+					<image>
+						<Image url="@../../images/fa-plus-15px.png" />
+					</image>
+				</ImageView>
+			</graphic>
+			<styleClass>
+				<String fx:value="btn" />
+				<String fx:value="btn-light" />
+				<String fx:value="btn-small" />
+			</styleClass>
+		</Button>
+	</children>
+	<stylesheets>
+      <URL value="@../../styles/common.css" />
+      <URL value="@../../styles/subwindow.css" />
+   </stylesheets>
+</AnchorPane>

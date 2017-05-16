@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import hu.vitamas.enotesz.*?>
+<?import javafx.collections.*?>
+<?import java.net.*?>
+
+<AnchorPane fx:id="AnchorPane" prefHeight="564.0" prefWidth="765.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.vitamas.enotesz.controller.EventController">
+	<children>
+		<Label alignment="CENTER" layoutY="10.0" prefHeight="43.0" prefWidth="765.0" styleClass="window-title" text="Esemény: nincs" textAlignment="CENTER">
+			<graphic>
+				<ImageView fitHeight="13" fitWidth="13">
+					<image>
+						<Image url="@../../images/fa-calendar-15px.png" />
+					</image>
+				</ImageView>
+			</graphic>
+			<font>
+				<Font name="System Bold" size="15.0" />
+			</font>
+		</Label>
+		<TitledPane fx:id="eventText" animated="false" collapsible="false" layoutX="10.0" layoutY="72.0" prefHeight="467.0" prefWidth="433.0" text="Esemény leírása">
+			<content>
+				<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+					<children>
+						<WebView fx:id="eventTextBody" layoutX="5.0" layoutY="3.0" prefHeight="420.0" prefWidth="410.0" />
+					</children>
+				</AnchorPane>
+			</content>
+		</TitledPane>
+		<TitledPane fx:id="eventInfo" animated="false" collapsible="false" layoutX="453.0" layoutY="72.0" prefHeight="129.0" prefWidth="301.0" text="Információk">
+			<content>
+				<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="128.0" prefWidth="299.0">
+					<children>
+						<Label layoutX="6.0" layoutY="8.0" prefHeight="26.0" prefWidth="104.0" text="Helyszín:" />
+						<Label layoutX="6.0" layoutY="34.0" prefHeight="26.0" prefWidth="104.0" text="Esemény kezdete:" />
+						<Label layoutX="6.0" layoutY="60.0" prefHeight="26.0" prefWidth="104.0" text="Esemény vége:" />
+						<Label fx:id="eventInfoPlace" layoutX="118.0" layoutY="8.0" prefHeight="26.0" prefWidth="172.0" text="nincs helyszín" />
+						<Label fx:id="eventInfoFrom" layoutX="118.0" layoutY="34.0" prefHeight="26.0" prefWidth="172.0" text="nincs megadva" />
+						<Label fx:id="eventInfoTo" layoutX="118.0" layoutY="60.0" prefHeight="26.0" prefWidth="172.0" text="nincs megadva" />
+					</children>
+				</AnchorPane>
+			</content>
+		</TitledPane>
+		<Button fx:id="eventEdit" layoutX="453.0" layoutY="212.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="301.0" text="Esemény módosítása">
+			<styleClass>
+				<String fx:value="btn" />
+				<String fx:value="btn-light" />
+			</styleClass>
+		</Button>
+		<Button fx:id="eventDelete" layoutX="453.0" layoutY="253.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="301.0" text="Esemény törlése">
+			<styleClass>
+				<String fx:value="btn" />
+				<String fx:value="btn-light" />
+			</styleClass>
+		</Button>
+	</children>
+	<stylesheets>
+      <URL value="@../../styles/common.css" />
+      <URL value="@../../styles/subwindow.css" />
+   </stylesheets>
+</AnchorPane>

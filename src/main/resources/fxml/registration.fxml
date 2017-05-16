@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import hu.vitamas.enotesz.*?>
+<?import javafx.collections.*?>
+<?import java.net.*?>
+
+<AnchorPane fx:id="AnchorPane" prefHeight="332.0" prefWidth="460.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.vitamas.enotesz.controller.RegistrationController">
+	<children>
+		<Label alignment="CENTER_RIGHT" layoutX="39.0" layoutY="192.0" prefHeight="29.0" prefWidth="99.0" text="Jelszó:">
+			<font>
+				<Font name="System Bold" size="13.0" />
+			</font>
+		</Label>
+		<Label alignment="CENTER_RIGHT" layoutX="39.0" layoutY="229.0" prefHeight="29.0" prefWidth="99.0" text="Jelszó újra:">
+			<font>
+				<Font name="System Bold" size="13.0" />
+			</font>
+		</Label>
+		<Button fx:id="saveBtn" layoutX="115.0" layoutY="282.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="231.0" text="Fiók létrehozása">
+			<graphic>
+				<ImageView fitHeight="13" fitWidth="13">
+					<image>
+						<Image url="@../images/fa-plus-15px.png" />
+					</image>
+				</ImageView>
+			</graphic>
+			<styleClass>
+				<String fx:value="btn" />
+				<String fx:value="btn-light" />
+			</styleClass>
+		</Button>
+		<Label alignment="CENTER" layoutY="10.0" prefHeight="38.0" prefWidth="495.0" styleClass="window-title" text="Új fiók létrehozása" textAlignment="CENTER">
+			<graphic>
+				<ImageView fitHeight="13" fitWidth="13">
+					<image>
+						<Image url="@../images/fa-plus-15px.png" />
+					</image>
+				</ImageView>
+			</graphic>
+			<font>
+				<Font name="System Bold" size="15.0" />
+			</font>
+		</Label>
+		<PasswordField fx:id="repassField" layoutX="150.0" layoutY="229.0" prefHeight="26.0" prefWidth="272.0" promptText="Jelszó újra (minimum 8 karakter)">
+			<styleClass>
+				<String fx:value="input" />
+				<String fx:value="input-small" />
+			</styleClass>
+			<font>
+				<Font size="13.0" />
+			</font>
+		</PasswordField>
+		<PasswordField fx:id="passField" layoutX="150.0" layoutY="192.0" prefHeight="26.0" prefWidth="272.0" promptText="Jelszó (minimum 8 karakter)">
+			<styleClass>
+				<String fx:value="input" />
+				<String fx:value="input-small" />
+			</styleClass>
+			<font>
+				<Font size="13.0" />
+			</font>
+		</PasswordField>
+		<Label alignment="CENTER_RIGHT" layoutX="39.0" layoutY="153.0" prefHeight="29.0" prefWidth="99.0" text="E-mail cím:">
+			<font>
+				<Font name="System Bold" size="13.0" />
+			</font>
+		</Label>
+		<TextField fx:id="emailField" layoutX="150.0" layoutY="153.0" prefHeight="25.0" prefWidth="272.0" promptText="E-mail cím">
+			<styleClass>
+				<String fx:value="input" />
+				<String fx:value="input-small" />
+			</styleClass>
+			<font>
+				<Font size="13.0" />
+			</font>
+		</TextField>
+		<TextField fx:id="nameField" layoutX="150.0" layoutY="115.0" prefHeight="25.0" prefWidth="272.0" promptText="Felhasználói név (belépéshez)">
+			<styleClass>
+				<String fx:value="input" />
+				<String fx:value="input-small" />
+			</styleClass>
+			<font>
+				<Font size="13.0" />
+			</font>
+		</TextField>
+		<Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="39.0" layoutY="115.0" prefHeight="29.0" prefWidth="99.0" text="Login név:">
+			<font>
+				<Font name="System Bold" size="13.0" />
+			</font>
+		</Label>
+		<Label alignment="CENTER" contentDisplay="CENTER" layoutX="36.0" layoutY="66.0" prefHeight="33.0" prefWidth="424.0" style="-fx-border-color: red; -fx-padding: 5; -fx-border-radius: 5;" text="A regisztrációval elfogadod a szabályzatot. Részletek a honlapon." textAlignment="CENTER" textFill="RED">
+			<font>
+				<Font size="13.0" />
+			</font>
+		</Label>
+	</children>
+	<stylesheets>
+      <URL value="@../styles/common.css" />
+      <URL value="@../styles/subwindow.css" />
+   </stylesheets>
+</AnchorPane>

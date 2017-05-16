@@ -1,0 +1,210 @@
+/* CALENDAR */
+
+.calendar-header {
+    -fx-border-style: solid;
+    -fx-border-width: 0.5;
+    -fx-border-color: grey;
+    -fx-font-weight: bold;
+    -fx-background-color: #C0C0C0;
+}
+
+.calendar-day {
+    -fx-border-style: solid;
+    -fx-border-width: 0.5;
+    -fx-border-color: grey;
+}
+
+.calendar-day:hover {
+    -fx-background-color: #3cb371;
+    -fx-cursor: hand;
+    -fx-border-style: solid;
+    -fx-border-width: 0.5;
+    -fx-border-color: green;
+}
+
+/* BUTTONS */
+
+.button {
+    -fx-font-weight: bold;
+}
+
+.btn { 
+    -fx-border-color: rgb(31,120,43);
+   	-fx-border-style: solid;
+   	-fx-border-width: 1.0;
+   	-fx-background-insets: 0,9 9 8 9,9,10,11;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 15px;
+    -fx-text-fill: #311c09;
+}
+
+.btn-small {
+	-fx-font-size: 12px;
+	-fx-padding: 3;
+}
+
+.btn-mini {
+	-fx-font-size: 9px;
+}
+
+.btn:hover {
+    -fx-cursor: hand;
+}
+
+.btn-light { -fx-background-color: lightgreen; }
+.btn-light:hover { -fx-background-color: rgb(46,177,63); }
+
+.btn-dark { -fx-background-color: #4DB36A; }
+.btn-dark:hover { -fx-background-color: rgb(46,177,63); }
+
+.btn-menu { -fx-background-color: #E6FFC9; }
+.btn-menu:hover { -fx-background-color: rgb(167,225,108); }
+
+.btn-outline { 
+	-fx-background-color: #E6FFC9;
+	-fx-border-radius: 0;
+}
+.btn-outline:hover { -fx-background-color: rgb(167,225,108); }
+
+/* INPUT */
+
+.input {
+	-fx-border-color: rgb(31,120,43);
+   	-fx-border-style: solid;
+   	-fx-border-width: 1.0;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 15px;
+    -fx-text-fill: #311c09;
+}
+
+.input-small {
+	-fx-font-size: 13px;
+}
+
+.input-label {
+	-fx-font-size: 13px;
+	-fx-font-weight: bold;
+}
+
+/* HYPERLINK */
+
+.hyperlink {
+    -fx-text-fill: #3DA03F;
+    -fx-underline: true;
+}
+
+.hyperlink:hover, .hyperlink:active, .hyperlink:focus {
+    -fx-text-fill: #1C6D1D;
+    -fx-underline: true;
+}
+
+/* TITLED PANE */
+
+.titled-pane 
+{
+	-fx-border-color: rgb(31,120,43);
+   	-fx-border-style: solid;
+   	-fx-border-width: 1.0;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+
+}
+.titled-pane:focused 
+{
+	-fx-text-fill: black;
+}
+
+.titled-pane > .title 
+{
+	-fx-background-color: lightgreen;
+	-fx-font-weight: bold;
+	-fx-border-radius: 5 5 0 0;
+  	-fx-background-radius: 5 5 0 0;
+	-fx-padding: 5.0;
+	-fx-background-insets: 0;
+}
+
+.titled-pane > *.content 
+{
+	-fx-background-color: #F0F1F1;
+	-fx-border-radius: 0 0 5 5;
+  	-fx-background-radius: 0 0 5 5;
+}
+
+.titled-pane > *.content > AnchorPane
+{
+	-fx-background-color: #F0F1F1;
+	-fx-background-radius: 5.0;
+}
+
+/* LIST */
+
+.list-view .list-cell {
+	-fx-border-color: lightgreen;
+	-fx-border-width: 0 0 1 0;
+	-fx-padding: 5;
+	-fx-text-fill: black;
+}
+
+.list-view .list-cell:hover {
+	-fx-background-color: rgb(167,225,108);
+	-fx-cursor: hand;
+}
+
+.list-view .list-cell:even { -fx-background-color: white; }
+.list-view .list-cell:odd { -fx-background-color: #E6FFC9; }
+.list-view .list-cell:even:hover { -fx-background-color: rgb(167,225,108); }
+.list-view .list-cell:odd:hover { -fx-background-color: rgb(167,225,108); }
+
+.list-view .list-cell:empty {
+	-fx-background-color: white;
+	-fx-border-width: 0;
+}
+
+.list-view .list-cell:empty:hover {
+	-fx-background-color: white;
+	-fx-cursor: default;
+}
+
+/* TAB */
+
+.tab {
+	-fx-border-width: 1 0 1 1;
+	-fx-border-color: rgb(31,120,43);
+	-fx-background-color: #E6FFC9;
+	/*-fx-padding: 5;*/
+	-fx-text-fill: black;
+	/*-fx-border-insets: 5 0 5 0;
+	-fx-background-insets: 5 0 5 0;*/
+	-fx-padding: 5 15 5 15;
+	-fx-focus-color: transparent;
+	-fx-faint-focus-color: transparent; 
+}
+
+.tab-content-area {
+	/*-fx-border-width: 0;
+	-fx-border-color: rgb(31,120,43);*/
+}
+
+.tab-pane > .tab-header-area > .tab-header-background {
+    -fx-background-color: transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color:  rgb(31,120,43);
+}
+
+.tab:selected {
+	-fx-background-color: rgb(167,225,108);
+}
+
+.tab:hover { 
+	-fx-background-color: rgb(167,225,108);
+	-fx-cursor: hand;
+}
+
+/*.tab-pane:focused > .tab-header-area > .headers-reg*/
