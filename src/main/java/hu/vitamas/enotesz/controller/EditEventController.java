@@ -138,7 +138,7 @@ public class EditEventController implements Initializable {
 				
 				evdao.update(ev);
 
-				Alert alert = Alerts.success("Sikeresen m�dos�tva!");
+				Alert alert = Alerts.success("Sikeresen módosítva!");
 				alert.setOnCloseRequest(creq -> closeWindow(e));
 				alert.showAndWait().ifPresent(response -> closeWindow(e));
 			} else {

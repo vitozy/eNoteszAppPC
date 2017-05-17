@@ -159,7 +159,7 @@ public class AddTaskController implements Initializable {
 		} else
 
 		{
-			Alerts.error("Hib�s vagy hiányzó adatok!").show();
+			Alerts.error("Hibás vagy hiányzó adatok!").show();
 		}
 
 	}

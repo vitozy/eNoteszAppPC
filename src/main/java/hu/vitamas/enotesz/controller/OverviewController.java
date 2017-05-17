@@ -117,14 +117,15 @@ public class OverviewController implements Initializable {
 				logger.error("Exit error", e1);
 			}
 		});
-		
+
 		addTaskBtn.setOnMouseClicked(this::createTask);
 	}
 
 	/**
 	 * Initializes the data of scene.
 	 * 
-	 * <p>Sets up current event and important task lists.
+	 * <p>
+	 * Sets up current event and important task lists.
 	 */
 	public void initData() {
 		initCurrentEvents();
@@ -140,12 +141,13 @@ public class OverviewController implements Initializable {
 
 			Stage stage = new Stage();
 			Scene scene = new Scene(root);
-			scene.getStylesheets().add("/styles/Styles.css");
 			stage.setTitle("eNotesz :: Új feladat létrehozása");
 			stage.getIcons().add(new Image("/images/logo_icon.png"));
 			stage.setScene(scene);
 			stage.setOnCloseRequest(closeEvent -> initData());
 			stage.addEventHandler(WindowEvent.WINDOW_SHOWING, winEvent -> controller.initData());
+			stage.setResizable(false);
+			stage.sizeToScene();
 			stage.show();
 
 		} catch (Exception ex) {
@@ -155,7 +157,7 @@ public class OverviewController implements Initializable {
 
 	private void initCurrentEvents() {
 		eventList.clear();
-		
+
 		EventsDao dao = new EventsDao();
 		List<Events> events = dao.upcomingEvents(Auth.getUserID());
 		events.stream().forEach(event -> {
@@ -171,9 +173,8 @@ public class OverviewController implements Initializable {
 
 			Integer id = eventsListView.getSelectionModel().getSelectedIndex();
 			eventsListView.getSelectionModel().clearSelection();
-
+			
 			if (id != -1) {
-
 				ListRecord eventRec = eventList.get(id);
 				Integer evId = eventRec.getId();
 
@@ -186,17 +187,19 @@ public class OverviewController implements Initializable {
 
 							EventController controller = fxmlLoader.<EventController>getController();
 							controller.setID(evId);
-
-							Stage stage = new Stage();
+							
 							Scene scene = new Scene(root);
+							Stage stage = new Stage();
 							stage.setTitle("eNotesz :: Esemény megtekintése");
 							stage.getIcons().add(new Image("/images/logo_icon.png"));
 							stage.setScene(scene);
-
+							
 							stage.addEventHandler(WindowEvent.WINDOW_SHOWING, e -> controller.initData());
+							stage.setResizable(false);
+							stage.sizeToScene();
 							stage.show();
 						} catch (Exception ex) {
-							logger.error("Window opening erro @currentEvent", ex);
+							logger.error("Event view window open failed", ex);
 						}
 					} else {
 						Alerts.error("Sikertelen adatlekérés!").showAndWait();
@@ -205,21 +208,24 @@ public class OverviewController implements Initializable {
 			}
 		});
 
+		currentEventsList.getChildren().clear();
 		currentEventsList.getChildren().add(eventsListView);
 		eventsListView.prefWidthProperty().bind(currentEventsList.widthProperty());
 		eventsListView.prefHeightProperty().bind(currentEventsList.heightProperty());
+
 	}
 
 	private void initImportantTasks() {
 		taskList.clear();
-		
+
 		TasksDao dao = new TasksDao();
 		List<Tasks> tasks = dao.importantTasks(Auth.getUserID());
 		tasks.stream().forEach(task -> {
-			String title = "[" + task.getTasksGroups().getName() + "] " + task.getTasksPriority().getName() + " - " + task.getTitle();
+			String title = "[" + task.getTasksGroups().getName() + "] " + task.getTasksPriority().getName() + " - "
+					+ task.getTitle();
 			taskList.add(new ListRecord(title, task.getId()));
 		});
-		
+
 		final ListView<ListRecord> listView = new ListView<>();
 		ObservableList<ListRecord> list = FXCollections.observableArrayList(taskList);
 		listView.setItems(list);
@@ -228,7 +234,7 @@ public class OverviewController implements Initializable {
 
 			Integer id = listView.getSelectionModel().getSelectedIndex();
 			listView.getSelectionModel().clearSelection();
-			
+
 			if (id != -1) {
 				ListRecord rec = taskList.get(id);
 				Integer taskId = rec.getId();
@@ -238,7 +244,8 @@ public class OverviewController implements Initializable {
 					if (task != null) {
 						if (task.getTasksGroups() != null) {
 							try {
-								FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/task/listview.fxml"));
+								FXMLLoader fxmlLoader = new FXMLLoader(
+										getClass().getResource("/fxml/task/listview.fxml"));
 								Parent root = (Parent) fxmlLoader.load();
 
 								TasksGroupController controller = fxmlLoader.<TasksGroupController>getController();
@@ -251,6 +258,8 @@ public class OverviewController implements Initializable {
 								stage.setScene(scene);
 
 								stage.addEventHandler(WindowEvent.WINDOW_SHOWING, e -> controller.initData());
+								stage.setResizable(false);
+								stage.sizeToScene();
 								stage.show();
 							} catch (Exception ex) {
 								logger.error("Taskgroup view window open failed", ex);

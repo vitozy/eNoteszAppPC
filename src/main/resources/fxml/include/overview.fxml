@@ -123,33 +123,25 @@
 								<Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold" text="Hol mit találsz?" wrappingWidth="408.13671875" />
 							</children>
 						</TextFlow>
-						<TextFlow layoutX="-1.0" layoutY="52.0" prefHeight="25.0" prefWidth="418.0" style="-fx-padding: 5">
+						<TextFlow layoutY="55.0" prefHeight="25.0" prefWidth="418.0" style="-fx-padding: 5">
 							<children>
 								<Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-underline: true" text="Áttekintő:" wrappingWidth="408.13671875" />
 								<Text strokeType="OUTSIDE" strokeWidth="0.0" text=" Friss és fontos események, teendők, illetve néhány gyorsgomb." wrappingWidth="408.13671875" />
 							</children>
 						</TextFlow>
-						<TextFlow layoutX="-1.0" layoutY="52.0" prefHeight="25.0" prefWidth="418.0" style="-fx-padding: 5" />
-						<TextFlow layoutY="101.0" prefHeight="25.0" prefWidth="418.0" style="-fx-padding: 5" />
-						<TextFlow layoutX="-1.0" layoutY="78.0" prefHeight="25.0" prefWidth="418.0" style="-fx-padding: 5">
-							<children>
-								<Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-underline: true" text="Jegyzetek:" wrappingWidth="408.13671875" />
-								<Text strokeType="OUTSIDE" strokeWidth="0.0" text=" Jegyzeteidet találod kategorizálva." wrappingWidth="408.13671875" />
-							</children>
-						</TextFlow>
-						<TextFlow layoutY="105.0" prefHeight="25.0" prefWidth="418.0" style="-fx-padding: 5">
+						<TextFlow layoutY="80.0" prefHeight="25.0" prefWidth="418.0" style="-fx-padding: 5">
 							<children>
 								<Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-underline: true" text="Teendők:" wrappingWidth="408.13671875" />
 								<Text strokeType="OUTSIDE" strokeWidth="0.0" text=" Teendőidet kategóriákra bontva tekintheted meg, megjelölheted az elvégzett teendőid, stb." wrappingWidth="408.13671875" />
 							</children>
 						</TextFlow>
-						<TextFlow layoutY="147.0" prefHeight="25.0" prefWidth="418.0" style="-fx-padding: 5">
+						<TextFlow layoutY="120.0" prefHeight="25.0" prefWidth="418.0" style="-fx-padding: 5">
 							<children>
 								<Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-underline: true" text="Események:" wrappingWidth="408.13671875" />
 								<Text strokeType="OUTSIDE" strokeWidth="0.0" text=" Események napokra lebontva. A napot a naptár és a dátumválasztó segítségével tudod meghatározni." wrappingWidth="407.712890625" />
 							</children>
 						</TextFlow>
-						<TextFlow layoutX="-1.0" layoutY="200.0" prefHeight="25.0" prefWidth="418.0" style="-fx-padding: 5">
+						<TextFlow layoutY="175.0" prefHeight="25.0" prefWidth="418.0" style="-fx-padding: 5">
 							<children>
 								<Text strokeType="OUTSIDE" strokeWidth="0.0" text="További információkért kattints az Információk gombra!" wrappingWidth="408.13671875">
 									<font>

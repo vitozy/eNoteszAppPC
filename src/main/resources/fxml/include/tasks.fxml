@@ -28,7 +28,7 @@
 				<AnchorPane fx:id="taskgroups" minHeight="0.0" minWidth="0.0" prefHeight="461.0" prefWidth="462.0" />
 			</content>
 		</TitledPane>
-		<Button fx:id="refreshBtn" layoutX="803.0" layoutY="500.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" text="Listák frissítése">
+		<Button fx:id="refreshBtn" layoutX="800.0" layoutY="500.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" style="-fx-background-radius: 0 5 5 0; -fx-border-radius: 0 5 5 0; -fx-border-width: 1 1 1 0;" text="Listák frissítése">
 			<graphic>
 				<ImageView fitHeight="13" fitWidth="13">
 					<image>
@@ -42,7 +42,7 @@
 				<String fx:value="btn-small" />
 			</styleClass>
 		</Button>
-		<Button fx:id="createListBtn" layoutX="648.0" layoutY="500.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Új teendőlista">
+		<Button fx:id="createListBtn" layoutX="600.0" layoutY="500.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0" style="-fx-background-radius: 5 0 0 5; -fx-border-radius: 5 0 0 5;" text="Új teendőlista létrehozása">
 			<graphic>
 				<ImageView fitHeight="13" fitWidth="13">
 					<image>
@@ -56,6 +56,5 @@
 				<String fx:value="btn-small" />
 			</styleClass>
 		</Button>
-		<TextField fx:id="createListName" layoutX="467.0" layoutY="500.0" prefHeight="25.0" prefWidth="182.0" promptText="Lista neve" style="-fx-border-color: green;" />
 	</children>
 </AnchorPane>

@@ -146,11 +146,13 @@ public class TasksGroupController implements Initializable {
 			dialog.setHeaderText("Mi legyen az új név?");
 
 			Optional<String> result = dialog.showAndWait();
-			String entered = "none.";
+			String entered = "";
 
 			if (result.isPresent()) {
 				entered = result.get();
 			}
+			
+			if(entered.length() == 0) return;
 
 			if (!tasksGroup.getName().equals(entered)) {
 				tasksGroup.setName(entered);
@@ -160,7 +162,7 @@ public class TasksGroupController implements Initializable {
 			}
 
 		} else {
-			Alerts.error("Hiba t�rt�nt").show();
+			Alerts.error("Hiba történt").show();
 		}
 
 	}
@@ -202,6 +204,8 @@ public class TasksGroupController implements Initializable {
 				stage.setScene(scene);
 				stage.setOnCloseRequest(closeEvent -> initData());
 				stage.addEventHandler(WindowEvent.WINDOW_SHOWING, winEvent -> controller.initData());
+				stage.setResizable(false);
+				stage.sizeToScene();
 				stage.show();
 
 			} catch (Exception ex) {
@@ -228,6 +232,8 @@ public class TasksGroupController implements Initializable {
 				stage.setScene(scene);
 				stage.setOnCloseRequest(closeEvent -> initData());
 				stage.addEventHandler(WindowEvent.WINDOW_SHOWING, winEvent -> controller.initData());
+				stage.setResizable(false);
+				stage.sizeToScene();
 				stage.show();
 
 			} catch (Exception ex) {

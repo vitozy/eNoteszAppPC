@@ -154,6 +154,8 @@ public class SimpleWindow {
 			stage.setTitle("eNotesz :: " + title);
 			stage.getIcons().add(new Image("/images/logo_icon.png"));
 			stage.setScene(scene);
+			stage.setResizable(false);
+			stage.sizeToScene();
 			stage.show();
 		} catch (Exception ex) {
 			logger.error("Opening SIMPLEWINDOW window", ex);
@@ -182,6 +184,8 @@ public class SimpleWindow {
 			stage.setTitle("eNotesz :: " + title);
 			stage.getIcons().add(new Image("/images/logo_icon.png"));
 			stage.setScene(scene);
+			stage.setResizable(false);
+			stage.sizeToScene();
 			return stage;
 		} catch (Exception ex) {
 			logger.error("toStage SIMPLEWINDOW window", ex);

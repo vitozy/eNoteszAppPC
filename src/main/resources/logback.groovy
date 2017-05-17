@@ -24,7 +24,7 @@ appender("FILE_MSG", FileAppender) {
   file = "logs/messages.log"
   append = false
   filter(ThresholdFilter) {
-    level = WARN
+    level = INFO
   }
   encoder(PatternLayoutEncoder) {
     pattern = "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"

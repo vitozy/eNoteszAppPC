@@ -100,6 +100,8 @@ public class EventController implements Initializable {
 				stage.setScene(scene);
 				stage.setOnCloseRequest(closeEvent -> initData());
 				stage.addEventHandler(WindowEvent.WINDOW_SHOWING, winEvent -> controller.initData());
+				stage.setResizable(false);
+				stage.sizeToScene();
 				stage.show();
 
 			} catch (Exception ex) {

@@ -21,6 +21,13 @@
 			</font>
 		</Label>
 		<Label fx:id="groupViewTitle" alignment="CENTER" layoutY="10.0" prefHeight="43.0" prefWidth="765.0" styleClass="window-title" text="Teendőlista:  nincs" textAlignment="CENTER">
+			<graphic>
+				<ImageView fitHeight="15" fitWidth="15">
+					<image>
+						<Image url="@../../images/fa-tasks-15px.png" />
+					</image>
+				</ImageView>
+			</graphic>
 			<font>
 				<Font name="System Bold" size="15.0" />
 			</font>

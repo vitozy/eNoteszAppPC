@@ -13,21 +13,21 @@
 <?import javafx.collections.*?>
 <?import java.net.*?>
 
-<AnchorPane prefHeight="325.0" prefWidth="676.0" style="-fx-background-color: #eee;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.vitamas.enotesz.controller.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="325.0" prefWidth="660.0" style="-fx-background-color: #eee;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.vitamas.enotesz.controller.LoginController">
 	<children>
-		<Pane prefHeight="325.0" prefWidth="302.0" style="-fx-background-color: lightgreen;">
+		<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="325.0" prefWidth="300.0" snapToPixel="false" style="-fx-background-color: lightgreen;">
 			<children>
 				<ImageView fitHeight="122.0" fitWidth="90.0" layoutX="117.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
 					<image>
 						<Image url="@../images/logo.png" />
 					</image>
 				</ImageView>
-				<Label alignment="CENTER" layoutY="147.0" prefHeight="45.0" prefWidth="296.0" text="eNotesz">
+				<Label alignment="CENTER" layoutY="147.0" prefHeight="45.0" prefWidth="300.0" text="eNotesz">
 					<font>
 						<Font name="System Bold" size="30.0" />
 					</font>
 				</Label>
-				<Label alignment="CENTER" layoutY="179.0" prefHeight="45.0" prefWidth="296.0" text="Legyél mindig naprakész!">
+				<Label alignment="CENTER" layoutY="179.0" prefHeight="45.0" prefWidth="300.0" text="Legyél mindig naprakész!">
 					<font>
 						<Font name="System Bold" size="20.0" />
 					</font>

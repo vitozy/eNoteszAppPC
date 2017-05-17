@@ -126,6 +126,8 @@ public class LoginController implements Initializable {
 							
 							AppController controller = fxmlLoader.<AppController>getController();
 							stage.addEventHandler(WindowEvent.WINDOW_SHOWN, init -> controller.initData());
+							stage.setResizable(false);
+							stage.sizeToScene();
 							stage.show();
 							
 							((Node) (e.getSource())).getScene().getWindow().hide();
@@ -159,7 +161,7 @@ public class LoginController implements Initializable {
 				logger.error("Login failed", ex);
 			}
 		} else {
-			Alerts.warning("Hi�nyz� adatok!", "Kérlek töltsd ki az összes mezőt!").show();
+			Alerts.warning("Hiányzó adatok!", "Kérlek töltsd ki az összes mezőt!").show();
 		}
 
 	}

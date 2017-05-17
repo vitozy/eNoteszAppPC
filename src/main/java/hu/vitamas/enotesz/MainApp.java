@@ -43,9 +43,11 @@ public class MainApp extends Application {
 	public void start(Stage stage) throws Exception {
 		Parent root = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
 		Scene scene = new Scene(root);
-		stage.setTitle("eNotesz v0.1 :: Bejelentkezés");
+		stage.setTitle("eNotesz :: Bejelentkezés");
 		stage.getIcons().add(new Image("/images/logo_icon.png"));
 		stage.setScene(scene);
+		stage.setResizable(false);
+		stage.sizeToScene();
 		stage.show();
 	}
 

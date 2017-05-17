@@ -12,11 +12,11 @@
 <?import javafx.collections.*?>
 <?import java.net.*?>
 
-<AnchorPane fx:id="anchorPane" prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.vitamas.enotesz.controller.AppController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.vitamas.enotesz.controller.AppController">
 	<children>
-		<SplitPane fx:id="split" dividerPositions="0.08161258603736479" prefHeight="598.0" prefWidth="1040.0">
+		<SplitPane fx:id="split" dividerPositions="0.08161258603736479" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1050.0">
 			<items>
-				<AnchorPane maxWidth="80.0" minHeight="598.0" minWidth="80.0" prefHeight="598.0" prefWidth="80.0">
+				<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="598.0" minWidth="80.0" prefHeight="600.0" prefWidth="80.0">
 					<children>
 						<ImageView fitHeight="69.0" fitWidth="53.0" layoutX="22.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
 							<image>
@@ -69,9 +69,9 @@
 						</Button>
                   </children>
 				</AnchorPane>
-				<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="927.0">
+				<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="970.0">
 					<children>
-						<TabPane prefHeight="600.0" prefWidth="952.0" style="-fx-background-color: #DDDDDD;" tabClosingPolicy="UNAVAILABLE">
+						<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="970.0" style="-fx-background-color: #DDDDDD;" tabClosingPolicy="UNAVAILABLE">
 							<tabs>
 								<Tab id="home-tab" style=" -fx-border-radius: 15 0 0 0; -fx-background-radius: 15 0 0 0;" text="Áttekintő">
 									<graphic>

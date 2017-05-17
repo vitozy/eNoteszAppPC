@@ -15,7 +15,7 @@
 
 <AnchorPane fx:id="AnchorPane" prefHeight="564.0" prefWidth="765.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.vitamas.enotesz.controller.EventController">
 	<children>
-		<Label alignment="CENTER" layoutY="10.0" prefHeight="43.0" prefWidth="765.0" styleClass="window-title" text="Esemény: nincs" textAlignment="CENTER">
+		<Label fx:id="eventViewTitle" alignment="CENTER" layoutY="10.0" prefHeight="43.0" prefWidth="765.0" styleClass="window-title" text="Esemény: nincs" textAlignment="CENTER">
 			<graphic>
 				<ImageView fitHeight="13" fitWidth="13">
 					<image>

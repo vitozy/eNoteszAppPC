@@ -19,6 +19,7 @@ package hu.vitamas.enotesz.controller;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 import org.slf4j.Logger;
@@ -43,6 +44,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -85,7 +87,8 @@ public class TasksController implements Initializable {
 	/**
 	 * Initializes data of this scene.
 	 * 
-	 * <p>Sets up lists of important tasks, tasks with deadline and groups.
+	 * <p>
+	 * Sets up lists of important tasks, tasks with deadline and groups.
 	 */
 	public void initData() {
 		setImportantsList();
@@ -130,6 +133,8 @@ public class TasksController implements Initializable {
 							stage.setScene(scene);
 
 							stage.addEventHandler(WindowEvent.WINDOW_SHOWING, e -> controller.initData());
+							stage.setResizable(false);
+							stage.sizeToScene();
 							stage.show();
 						} catch (Exception ex) {
 							logger.error("Taskgroup view window open failed", ex);
@@ -150,14 +155,14 @@ public class TasksController implements Initializable {
 
 	private void setDeadlinesList() {
 		deadlinesList.clear();
-		
+
 		TasksDao dao = new TasksDao();
 		List<Tasks> tasks = dao.deadlineTasks(Auth.getUserID());
 		tasks.stream().forEach(task -> {
 			String title = "[" + task.getTasksGroups().getName() + "] " + task.getDeadline() + " - " + task.getTitle();
 			deadlinesList.add(new ListRecord(title, task.getId()));
 		});
-		
+
 		final ListView<ListRecord> listView = new ListView<>();
 		ObservableList<ListRecord> list = FXCollections.observableArrayList(deadlinesList);
 		listView.setItems(list);
@@ -166,7 +171,7 @@ public class TasksController implements Initializable {
 
 			Integer id = listView.getSelectionModel().getSelectedIndex();
 			listView.getSelectionModel().clearSelection();
-			
+
 			if (id != -1) {
 				ListRecord rec = deadlinesList.get(id);
 				Integer taskId = rec.getId();
@@ -176,7 +181,8 @@ public class TasksController implements Initializable {
 					if (task != null) {
 						if (task.getTasksGroups() != null) {
 							try {
-								FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/task/listview.fxml"));
+								FXMLLoader fxmlLoader = new FXMLLoader(
+										getClass().getResource("/fxml/task/listview.fxml"));
 								Parent root = (Parent) fxmlLoader.load();
 
 								TasksGroupController controller = fxmlLoader.<TasksGroupController>getController();
@@ -184,11 +190,13 @@ public class TasksController implements Initializable {
 
 								Scene scene = new Scene(root);
 								Stage stage = new Stage();
-								stage.setTitle("eNotesz :: Teendőlista megtekint�se");
+								stage.setTitle("eNotesz :: Teendőlista megtekintése");
 								stage.getIcons().add(new Image("/images/logo_icon.png"));
 								stage.setScene(scene);
 
 								stage.addEventHandler(WindowEvent.WINDOW_SHOWING, e -> controller.initData());
+								stage.setResizable(false);
+								stage.sizeToScene();
 								stage.show();
 							} catch (Exception ex) {
 								logger.error("Taskgroup view window open failed", ex);
@@ -211,14 +219,15 @@ public class TasksController implements Initializable {
 
 	private void setImportantsList() {
 		importantsList.clear();
-		
+
 		TasksDao dao = new TasksDao();
 		List<Tasks> tasks = dao.importantTasks(Auth.getUserID());
 		tasks.stream().forEach(task -> {
-			String title = "[" + task.getTasksGroups().getName() + "] " + task.getTasksPriority().getName() + " - " + task.getTitle();
+			String title = "[" + task.getTasksGroups().getName() + "] " + task.getTasksPriority().getName() + " - "
+					+ task.getTitle();
 			importantsList.add(new ListRecord(title, task.getId()));
 		});
-		
+
 		final ListView<ListRecord> listView = new ListView<>();
 		ObservableList<ListRecord> list = FXCollections.observableArrayList(importantsList);
 		listView.setItems(list);
@@ -227,7 +236,7 @@ public class TasksController implements Initializable {
 
 			Integer id = listView.getSelectionModel().getSelectedIndex();
 			listView.getSelectionModel().clearSelection();
-			
+
 			if (id != -1) {
 				ListRecord rec = importantsList.get(id);
 				Integer taskId = rec.getId();
@@ -237,7 +246,8 @@ public class TasksController implements Initializable {
 					if (task != null) {
 						if (task.getTasksGroups() != null) {
 							try {
-								FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/task/listview.fxml"));
+								FXMLLoader fxmlLoader = new FXMLLoader(
+										getClass().getResource("/fxml/task/listview.fxml"));
 								Parent root = (Parent) fxmlLoader.load();
 
 								TasksGroupController controller = fxmlLoader.<TasksGroupController>getController();
@@ -245,11 +255,13 @@ public class TasksController implements Initializable {
 
 								Scene scene = new Scene(root);
 								Stage stage = new Stage();
-								stage.setTitle("eNotesz :: Teendőlista megtekint�se");
+								stage.setTitle("eNotesz :: Teendőlista megtekintése");
 								stage.getIcons().add(new Image("/images/logo_icon.png"));
 								stage.setScene(scene);
 
 								stage.addEventHandler(WindowEvent.WINDOW_SHOWING, e -> controller.initData());
+								stage.setResizable(false);
+								stage.sizeToScene();
 								stage.show();
 							} catch (Exception ex) {
 								logger.error("Taskgroup view window open failed", ex);
@@ -279,9 +291,21 @@ public class TasksController implements Initializable {
 	private void addTasklist(MouseEvent e) {
 		Users u = (new UsersDao()).getSessionUser();
 		if (u != null) {
-			String name = createListName.getText();
+			TextInputDialog dialog = new TextInputDialog();
+			dialog.setTitle("eNotesz :: Új teendőlista");
+			dialog.setHeaderText("Mi legyen az név?");
+
+			Optional<String> result = dialog.showAndWait();
+			String entered = "";
+
+			if (result.isPresent()) {
+				entered = result.get();
+			}
+
+			if(entered.length() == 0) return;
+			
 			TasksGroups tg = new TasksGroups();
-			tg.setName(name);
+			tg.setName(entered);
 			tg.setUsers(u);
 			TasksGroupsDao dao = new TasksGroupsDao();
 			try {
@@ -291,6 +315,7 @@ public class TasksController implements Initializable {
 			} catch (Exception ex) {
 				Alerts.error("Hiba történt!").showAndWait();
 			}
+
 		} else {
 			logger.error("Authenticated user not found...");
 			Alerts.error("Azonosítási hiba történt!").showAndWait();

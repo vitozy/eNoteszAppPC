@@ -122,7 +122,7 @@ public class EventsController implements Initializable {
 		Integer day = currentDate.getDayOfMonth();
 		String month = currentDate.getMonth().getDisplayName(TextStyle.FULL_STANDALONE, Locale.forLanguageTag("hu"));
 
-		calendarBox.setText("Napt�r - " + year + ". " + month);
+		calendarBox.setText("Naptár - " + year + ". " + month);
 
 		String calboxStr = (new StringBuilder()).append("Nap kiválasztása - aktuális: ").append(year).append(". ")
 				.append(month).append(" ").append(day).append(".").toString();
@@ -270,6 +270,8 @@ public class EventsController implements Initializable {
 							stage.setScene(scene);
 							
 							stage.addEventHandler(WindowEvent.WINDOW_SHOWING, e -> controller.initData());
+							stage.setResizable(false);
+							stage.sizeToScene();
 							stage.show();
 						} catch (Exception ex) {
 							logger.error("Event view window open failed", ex);
