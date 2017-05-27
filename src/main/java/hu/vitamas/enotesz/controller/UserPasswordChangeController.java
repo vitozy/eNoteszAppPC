@@ -78,7 +78,7 @@ public class UserPasswordChangeController implements Initializable {
 		String renewpass = repass.getText();
 
 		if (!newpass.equals(renewpass)) {
-			Alerts.warning("Az új jelszó nem egyezik!");
+			Alerts.warning("Az új jelszó nem egyezik!").show();
 		} else {
 			SimpleApiResponse response = sendChangeRequest(newpass, chpass, userid);
 			if (response != null) {

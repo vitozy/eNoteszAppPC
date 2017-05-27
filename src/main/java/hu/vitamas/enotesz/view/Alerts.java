@@ -18,6 +18,10 @@ package hu.vitamas.enotesz.view;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.DialogPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 /**
  * Class for using easier the Alert class.
@@ -59,6 +63,9 @@ public class Alerts {
 		alert.setTitle("Hiba történt");
 		alert.setHeaderText(title);
 		alert.setContentText(text);
+		alert.setGraphic(new ImageView(Alerts.class.getClass().getResource("/images/alerts/error.png").toString()));
+		Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(new Image(Alerts.class.getResource("/images/logo_icon.png").toString()));
 		return alert;
 	}
 
@@ -84,6 +91,9 @@ public class Alerts {
 		alert.setTitle("Információ");
 		alert.setHeaderText(title);
 		alert.setContentText(text);
+		alert.setGraphic(new ImageView(Alerts.class.getClass().getResource("/images/alerts/info.png").toString()));
+		Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(new Image(Alerts.class.getResource("/images/logo_icon.png").toString()));
 		return alert;
 	}
 
@@ -109,6 +119,9 @@ public class Alerts {
 		alert.setTitle("Sikeres művelet");
 		alert.setHeaderText(title);
 		alert.setContentText(text);
+		alert.setGraphic(new ImageView(Alerts.class.getClass().getResource("/images/alerts/success.png").toString()));
+		Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(new Image(Alerts.class.getResource("/images/logo_icon.png").toString()));
 		return alert;
 	}
 
@@ -134,6 +147,10 @@ public class Alerts {
 		alert.setTitle("Sikertelen művelet");
 		alert.setHeaderText(title);
 		alert.setContentText(text);
+		alert.setGraphic(new ImageView(Alerts.class.getClass().getResource("/images/alerts/warning.png").toString()));
+		alert.getDialogPane().getStylesheets().add(Alerts.class.getResource("/styles/dialog.css").toExternalForm());
+		Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(new Image(Alerts.class.getResource("/images/logo_icon.png").toString()));
 		return alert;
 	}
 

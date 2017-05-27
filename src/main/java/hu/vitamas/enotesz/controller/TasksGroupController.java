@@ -47,6 +47,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.TitledPane;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
@@ -144,6 +145,11 @@ public class TasksGroupController implements Initializable {
 			TextInputDialog dialog = new TextInputDialog(tasksGroup.getName());
 			dialog.setTitle("eNotesz :: Teendőlista átnevezése");
 			dialog.setHeaderText("Mi legyen az új név?");
+			
+			dialog.setGraphic(new ImageView(this.getClass().getResource("/images/alerts/action.png").toString()));
+			dialog.getDialogPane().getStylesheets().add(this.getClass().getResource("/styles/dialog.css").toExternalForm());
+			Stage stage = (Stage) dialog.getDialogPane().getScene().getWindow();
+	        stage.getIcons().add(new Image(this.getClass().getResource("/images/logo_icon.png").toString()));
 
 			Optional<String> result = dialog.showAndWait();
 			String entered = "";

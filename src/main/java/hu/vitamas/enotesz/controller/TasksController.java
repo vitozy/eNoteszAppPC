@@ -46,6 +46,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -294,6 +295,10 @@ public class TasksController implements Initializable {
 			TextInputDialog dialog = new TextInputDialog();
 			dialog.setTitle("eNotesz :: Új teendőlista");
 			dialog.setHeaderText("Mi legyen az név?");
+			dialog.setGraphic(new ImageView(this.getClass().getResource("/images/alerts/action.png").toString()));
+			dialog.getDialogPane().getStylesheets().add(this.getClass().getResource("/styles/dialog.css").toExternalForm());
+			Stage stage = (Stage) dialog.getDialogPane().getScene().getWindow();
+	        stage.getIcons().add(new Image(this.getClass().getResource("/images/logo_icon.png").toString()));
 
 			Optional<String> result = dialog.showAndWait();
 			String entered = "";
