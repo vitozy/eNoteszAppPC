@@ -142,10 +142,10 @@ public class EditEventController implements Initializable {
 				alert.setOnCloseRequest(creq -> closeWindow(e));
 				alert.showAndWait().ifPresent(response -> closeWindow(e));
 			} else {
-				Alerts.warning("Nem megfelelő adatok!").showAndWait();
+				Alerts.warning("Nem megfelelő adatok!").show();
 			}
 		} else {
-			Alerts.warning("Nem megfelelő adatok!").showAndWait();
+			Alerts.warning("Nem megfelelő adatok!").show();
 		}
 
 	}

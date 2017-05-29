@@ -79,7 +79,7 @@ public class UserDetailChangeController implements Initializable {
 		} catch (Exception e) {
 			logger.error("User data error -- session", e);
 
-			Alerts.error("Sikertelen adatlekérés!").showAndWait();
+			Alerts.error("Sikertelen adatlekérés!").show();
 		}
 	}
 

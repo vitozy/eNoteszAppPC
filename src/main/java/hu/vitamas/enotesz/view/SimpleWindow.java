@@ -152,7 +152,7 @@ public class SimpleWindow {
 			}
 			;
 			stage.setTitle("eNotesz :: " + title);
-			stage.getIcons().add(new Image("/images/logo_icon.png"));
+			stage.getIcons().add(new Image(this.getClass().getResource("/images/logo_icon.png").toString()));
 			stage.setScene(scene);
 			stage.setResizable(false);
 			stage.sizeToScene();
@@ -182,7 +182,7 @@ public class SimpleWindow {
 			}
 			;
 			stage.setTitle("eNotesz :: " + title);
-			stage.getIcons().add(new Image("/images/logo_icon.png"));
+			stage.getIcons().add(new Image(this.getClass().getResource("/images/logo_icon.png").toString()));
 			stage.setScene(scene);
 			stage.setResizable(false);
 			stage.sizeToScene();

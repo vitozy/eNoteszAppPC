@@ -34,6 +34,7 @@ import hu.vitamas.enotesz.model.ListRecord;
 import hu.vitamas.enotesz.util.Auth;
 import hu.vitamas.enotesz.view.Alerts;
 import hu.vitamas.enotesz.view.CalendarView;
+import hu.vitamas.enotesz.view.ListViewHelper;
 import hu.vitamas.enotesz.view.SimpleWindow;
 import javafx.collections.*;
 import javafx.fxml.FXML;
@@ -83,7 +84,7 @@ public class EventsController implements Initializable {
 	public void initialize(URL url, ResourceBundle rb) {
 		// calendar init
 		CalendarView cv = new CalendarView(this.calendar);
-		GridPane cal = cv.setMonth(YearMonth.now()).setGridSize(50.0, 50.0).create().getView();
+		GridPane cal = cv.setMonth(YearMonth.now()).setGridSize(50.0, 45.0).create().getView();
 		cal.getChildren().stream().forEach((node) -> {
 			node.setOnMouseClicked(this::calendarOnClick);
 		});
@@ -266,7 +267,7 @@ public class EventsController implements Initializable {
 							Scene scene = new Scene(root);
 							Stage stage = new Stage();
 							stage.setTitle("eNotesz :: Esemény megtekintése");
-							stage.getIcons().add(new Image("/images/logo_icon.png"));
+							stage.getIcons().add(new Image(this.getClass().getResource("/images/logo_icon.png").toString()));
 							stage.setScene(scene);
 							
 							stage.addEventHandler(WindowEvent.WINDOW_SHOWING, e -> controller.initData());
@@ -277,12 +278,14 @@ public class EventsController implements Initializable {
 							logger.error("Event view window open failed", ex);
 						}
 					} else {
-						Alerts.error("Sikertelen adatlekérés!").showAndWait();
+						Alerts.error("Sikertelen adatlekérés!").show();
 					}
 				}
 			}
 		});
 
+		ListViewHelper.addIconToItems(listView, "fa-calendar-15px");
+		
 		eventsList.getChildren().clear();
 		eventsList.getChildren().add(listView);
 		listView.prefWidthProperty().bind(eventsList.widthProperty());

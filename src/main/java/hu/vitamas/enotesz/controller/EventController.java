@@ -96,7 +96,7 @@ public class EventController implements Initializable {
 				Stage stage = new Stage();
 				Scene scene = new Scene(root);
 				stage.setTitle("eNotesz :: Esemény megtekintése");
-				stage.getIcons().add(new Image("/images/logo_icon.png"));
+				stage.getIcons().add(new Image(this.getClass().getResource("/images/logo_icon.png").toString()));
 				stage.setScene(scene);
 				stage.setOnCloseRequest(closeEvent -> initData());
 				stage.addEventHandler(WindowEvent.WINDOW_SHOWING, winEvent -> controller.initData());
@@ -108,7 +108,7 @@ public class EventController implements Initializable {
 				logger.error("Event opening failed", ex);
 			}
 		} else {
-			Alerts.error("Sikertelen adatlek?r?s!").showAndWait();
+			Alerts.error("Sikertelen adatlekérés!").show();
 		}
 	}
 
@@ -130,7 +130,7 @@ public class EventController implements Initializable {
 				ex.printStackTrace();
 			}
 		} else {
-			Alerts.error("Sikertelen adatlekérés!").showAndWait();
+			Alerts.error("Sikertelen adatlekérés!").show();
 		}
 	}
 	

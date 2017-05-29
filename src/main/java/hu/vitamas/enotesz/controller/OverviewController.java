@@ -32,6 +32,7 @@ import hu.vitamas.enotesz.model.Tasks;
 import hu.vitamas.enotesz.util.Auth;
 import hu.vitamas.enotesz.util.Core;
 import hu.vitamas.enotesz.view.Alerts;
+import hu.vitamas.enotesz.view.ListViewHelper;
 import hu.vitamas.enotesz.view.SimpleWindow;
 import javafx.application.Platform;
 import javafx.collections.*;
@@ -142,7 +143,7 @@ public class OverviewController implements Initializable {
 			Stage stage = new Stage();
 			Scene scene = new Scene(root);
 			stage.setTitle("eNotesz :: Új feladat létrehozása");
-			stage.getIcons().add(new Image("/images/logo_icon.png"));
+			stage.getIcons().add(new Image(this.getClass().getResource("/images/logo_icon.png").toString()));
 			stage.setScene(scene);
 			stage.setOnCloseRequest(closeEvent -> initData());
 			stage.addEventHandler(WindowEvent.WINDOW_SHOWING, winEvent -> controller.initData());
@@ -191,7 +192,7 @@ public class OverviewController implements Initializable {
 							Scene scene = new Scene(root);
 							Stage stage = new Stage();
 							stage.setTitle("eNotesz :: Esemény megtekintése");
-							stage.getIcons().add(new Image("/images/logo_icon.png"));
+							stage.getIcons().add(new Image(this.getClass().getResource("/images/logo_icon.png").toString()));
 							stage.setScene(scene);
 							
 							stage.addEventHandler(WindowEvent.WINDOW_SHOWING, e -> controller.initData());
@@ -202,12 +203,14 @@ public class OverviewController implements Initializable {
 							logger.error("Event view window open failed", ex);
 						}
 					} else {
-						Alerts.error("Sikertelen adatlekérés!").showAndWait();
+						Alerts.error("Sikertelen adatlekérés!").show();
 					}
 				}
 			}
 		});
-
+		
+		ListViewHelper.addIconToItems(eventsListView, "material-timer-15px");
+		
 		currentEventsList.getChildren().clear();
 		currentEventsList.getChildren().add(eventsListView);
 		eventsListView.prefWidthProperty().bind(currentEventsList.widthProperty());
@@ -254,7 +257,7 @@ public class OverviewController implements Initializable {
 								Scene scene = new Scene(root);
 								Stage stage = new Stage();
 								stage.setTitle("eNotesz :: Teendőlista megtekintése");
-								stage.getIcons().add(new Image("/images/logo_icon.png"));
+								stage.getIcons().add(new Image(this.getClass().getResource("/images/logo_icon.png").toString()));
 								stage.setScene(scene);
 
 								stage.addEventHandler(WindowEvent.WINDOW_SHOWING, e -> controller.initData());
@@ -265,14 +268,16 @@ public class OverviewController implements Initializable {
 								logger.error("Taskgroup view window open failed", ex);
 							}
 						} else {
-							Alerts.error("Sikertelen adatlekérés!").showAndWait();
+							Alerts.error("Sikertelen adatlekérés!").show();
 						}
 					} else {
-						Alerts.error("Sikertelen adatlekérés!").showAndWait();
+						Alerts.error("Sikertelen adatlekérés!").show();
 					}
 				}
 			}
 		});
+		
+		ListViewHelper.addIconToItems(listView, "fa-check-15px");
 
 		importantTasksList.getChildren().clear();
 		importantTasksList.getChildren().add(listView);

@@ -34,6 +34,7 @@ import hu.vitamas.enotesz.model.TasksGroups;
 import hu.vitamas.enotesz.model.Users;
 import hu.vitamas.enotesz.util.Auth;
 import hu.vitamas.enotesz.view.Alerts;
+import hu.vitamas.enotesz.view.ListViewHelper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -46,7 +47,6 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -130,7 +130,7 @@ public class TasksController implements Initializable {
 							Scene scene = new Scene(root);
 							Stage stage = new Stage();
 							stage.setTitle("eNotesz :: Teendőlista megtekintése");
-							stage.getIcons().add(new Image("/images/logo_icon.png"));
+							stage.getIcons().add(new Image(this.getClass().getResource("/images/logo_icon.png").toString()));
 							stage.setScene(scene);
 
 							stage.addEventHandler(WindowEvent.WINDOW_SHOWING, e -> controller.initData());
@@ -141,11 +141,13 @@ public class TasksController implements Initializable {
 							logger.error("Taskgroup view window open failed", ex);
 						}
 					} else {
-						Alerts.error("Sikertelen adatlekérés!").showAndWait();
+						Alerts.error("Sikertelen adatlekérés!").show();
 					}
 				}
 			}
 		});
+		
+		ListViewHelper.addIconToItems(listView, "material-list-15px");
 
 		taskgroups.getChildren().clear();
 		taskgroups.getChildren().add(listView);
@@ -192,7 +194,7 @@ public class TasksController implements Initializable {
 								Scene scene = new Scene(root);
 								Stage stage = new Stage();
 								stage.setTitle("eNotesz :: Teendőlista megtekintése");
-								stage.getIcons().add(new Image("/images/logo_icon.png"));
+								stage.getIcons().add(new Image(this.getClass().getResource("/images/logo_icon.png").toString()));
 								stage.setScene(scene);
 
 								stage.addEventHandler(WindowEvent.WINDOW_SHOWING, e -> controller.initData());
@@ -203,14 +205,16 @@ public class TasksController implements Initializable {
 								logger.error("Taskgroup view window open failed", ex);
 							}
 						} else {
-							Alerts.error("Sikertelen adatlekérés!").showAndWait();
+							Alerts.error("Sikertelen adatlekérés!").show();
 						}
 					} else {
-						Alerts.error("Sikertelen adatlekérés!").showAndWait();
+						Alerts.error("Sikertelen adatlekérés!").show();
 					}
 				}
 			}
 		});
+		
+		ListViewHelper.addIconToItems(listView, "material-timer-15px");
 
 		deadlines.getChildren().clear();
 		deadlines.getChildren().add(listView);
@@ -257,7 +261,7 @@ public class TasksController implements Initializable {
 								Scene scene = new Scene(root);
 								Stage stage = new Stage();
 								stage.setTitle("eNotesz :: Teendőlista megtekintése");
-								stage.getIcons().add(new Image("/images/logo_icon.png"));
+								stage.getIcons().add(new Image(this.getClass().getResource("/images/logo_icon.png").toString()));
 								stage.setScene(scene);
 
 								stage.addEventHandler(WindowEvent.WINDOW_SHOWING, e -> controller.initData());
@@ -268,14 +272,17 @@ public class TasksController implements Initializable {
 								logger.error("Taskgroup view window open failed", ex);
 							}
 						} else {
-							Alerts.error("Sikertelen adatlekérés!").showAndWait();
+							Alerts.error("Sikertelen adatlekérés!").show();
 						}
 					} else {
-						Alerts.error("Sikertelen adatlekérés!").showAndWait();
+						Alerts.error("Sikertelen adatlekérés!").show();
 					}
 				}
 			}
+			
 		});
+		
+		ListViewHelper.addIconToItems(listView, "material-important-15px");
 
 		importants.getChildren().clear();
 		importants.getChildren().add(listView);
@@ -291,15 +298,8 @@ public class TasksController implements Initializable {
 
 	private void addTasklist(MouseEvent e) {
 		Users u = (new UsersDao()).getSessionUser();
-		if (u != null) {
-			TextInputDialog dialog = new TextInputDialog();
-			dialog.setTitle("eNotesz :: Új teendőlista");
-			dialog.setHeaderText("Mi legyen az név?");
-			dialog.setGraphic(new ImageView(this.getClass().getResource("/images/alerts/action.png").toString()));
-			dialog.getDialogPane().getStylesheets().add(this.getClass().getResource("/styles/dialog.css").toExternalForm());
-			Stage stage = (Stage) dialog.getDialogPane().getScene().getWindow();
-	        stage.getIcons().add(new Image(this.getClass().getResource("/images/logo_icon.png").toString()));
-
+		if (u != null) {	        
+	        TextInputDialog dialog = Alerts.textInput("Új teendőlista", "Mi legyen a név?", "action");
 			Optional<String> result = dialog.showAndWait();
 			String entered = "";
 
@@ -315,15 +315,15 @@ public class TasksController implements Initializable {
 			TasksGroupsDao dao = new TasksGroupsDao();
 			try {
 				dao.create(tg);
-				Alerts.info("Új lista létrehozva!").showAndWait();
+				Alerts.info("Új lista létrehozva!").show();
 				setGroupList();
 			} catch (Exception ex) {
-				Alerts.error("Hiba történt!").showAndWait();
+				Alerts.error("Hiba történt!").show();
 			}
 
 		} else {
 			logger.error("Authenticated user not found...");
-			Alerts.error("Azonosítási hiba történt!").showAndWait();
+			Alerts.error("Azonosítási hiba történt!").show();
 		}
 	}
 }

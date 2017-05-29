@@ -107,8 +107,9 @@ public class CalendarView {
 				label.setPrefHeight(gridHeight);
 				label.setAlignment(Pos.CENTER);
 				GridPane.setHalignment(label, HPos.CENTER);
-				if (currentMonthDay)
+				if (currentMonthDay){
 					label.setStyle("-fx-font-weight: bold");
+				}
 
 				day.getChildren().add(label);
 				label.getStyleClass().add("calendar-day");

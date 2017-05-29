@@ -114,7 +114,7 @@ public class LoginController implements Initializable {
 							Stage stage = new Stage();
 							Scene scene = new Scene(root);
 							stage.setTitle("eNotesz - Legyél mindig naprakész!");
-							stage.getIcons().add(new Image("/images/logo_icon.png"));
+							stage.getIcons().add(new Image(this.getClass().getResource("/images/logo_icon.png").toString()));
 							stage.setOnCloseRequest(closeEvent -> {
 								try {
 									Platform.exit();

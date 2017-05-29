@@ -32,6 +32,7 @@ import hu.vitamas.enotesz.model.Tasks;
 import hu.vitamas.enotesz.model.TasksGroups;
 import hu.vitamas.enotesz.model.TasksPriority;
 import hu.vitamas.enotesz.view.Alerts;
+import hu.vitamas.enotesz.view.ListViewHelper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -47,7 +48,6 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.TitledPane;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
@@ -142,15 +142,7 @@ public class TasksGroupController implements Initializable {
 
 	private void rename(MouseEvent e) {
 		if (tasksGroup != null) {
-			TextInputDialog dialog = new TextInputDialog(tasksGroup.getName());
-			dialog.setTitle("eNotesz :: Teendőlista átnevezése");
-			dialog.setHeaderText("Mi legyen az új név?");
-			
-			dialog.setGraphic(new ImageView(this.getClass().getResource("/images/alerts/action.png").toString()));
-			dialog.getDialogPane().getStylesheets().add(this.getClass().getResource("/styles/dialog.css").toExternalForm());
-			Stage stage = (Stage) dialog.getDialogPane().getScene().getWindow();
-	        stage.getIcons().add(new Image(this.getClass().getResource("/images/logo_icon.png").toString()));
-
+			TextInputDialog dialog = Alerts.textInput("Teendőlista átnevezése", "Mi legyen az új név?", "action");
 			Optional<String> result = dialog.showAndWait();
 			String entered = "";
 
@@ -191,7 +183,7 @@ public class TasksGroupController implements Initializable {
 				ex.printStackTrace();
 			}
 		} else {
-			Alerts.error("Sikertelen adatlekérés!").showAndWait();
+			Alerts.error("Sikertelen adatlekérés!").show();
 		}
 	}
 
@@ -206,7 +198,7 @@ public class TasksGroupController implements Initializable {
 				Stage stage = new Stage();
 				Scene scene = new Scene(root);
 				stage.setTitle("eNotesz :: Új feladat létrehozása");
-				stage.getIcons().add(new Image("/images/logo_icon.png"));
+				stage.getIcons().add(new Image(this.getClass().getResource("/images/logo_icon.png").toString()));
 				stage.setScene(scene);
 				stage.setOnCloseRequest(closeEvent -> initData());
 				stage.addEventHandler(WindowEvent.WINDOW_SHOWING, winEvent -> controller.initData());
@@ -218,7 +210,7 @@ public class TasksGroupController implements Initializable {
 				logger.error("Add task window opening failed", ex);
 			}
 		} else {
-			Alerts.error("Sikertelen adatlekérés!").showAndWait();
+			Alerts.error("Sikertelen adatlekérés!").show();
 		}
 	}
 
@@ -234,7 +226,7 @@ public class TasksGroupController implements Initializable {
 				Stage stage = new Stage();
 				Scene scene = new Scene(root);
 				stage.setTitle("eNotesz :: Feladat szerkesztése");
-				stage.getIcons().add(new Image("/images/logo_icon.png"));
+				stage.getIcons().add(new Image(this.getClass().getResource("/images/logo_icon.png").toString()));
 				stage.setScene(scene);
 				stage.setOnCloseRequest(closeEvent -> initData());
 				stage.addEventHandler(WindowEvent.WINDOW_SHOWING, winEvent -> controller.initData());
@@ -246,7 +238,7 @@ public class TasksGroupController implements Initializable {
 				logger.error("Edit task window opening failed", ex);
 			}
 		} else {
-			Alerts.error("Nincs kijelölve teendő!").showAndWait();
+			Alerts.error("Nincs kijelölve teendő!").show();
 		}
 	}
 
@@ -257,7 +249,7 @@ public class TasksGroupController implements Initializable {
 			setDefaultTask();
 			initData();
 		} else {
-			Alerts.error("Nincs kijelölve teendő!").showAndWait();
+			Alerts.error("Nincs kijelölve teendő!").show();
 		}
 	}
 
@@ -305,6 +297,8 @@ public class TasksGroupController implements Initializable {
 				}
 			}
 		});
+		
+		ListViewHelper.addIconToItems(listView, "fa-note-15px");
 
 		tasks.getChildren().clear();
 		tasks.getChildren().add(listView);

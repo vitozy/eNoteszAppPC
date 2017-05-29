@@ -1,25 +1,20 @@
 /* CALENDAR */
 
 .calendar-header {
-    -fx-border-style: solid;
-    -fx-border-width: 0.5;
-    -fx-border-color: grey;
+	-fx-background-color: darkgrey, #EEFABE;
+    -fx-background-insets: 0, 1 1 1 0;
     -fx-font-weight: bold;
-    -fx-background-color: #C0C0C0;
 }
 
 .calendar-day {
-    -fx-border-style: solid;
-    -fx-border-width: 0.5;
-    -fx-border-color: grey;
+	-fx-background-color: darkgrey, white;
+    -fx-background-insets: 0, 0 1 1 0;
 }
 
 .calendar-day:hover {
-    -fx-background-color: #3cb371;
+    -fx-background-color: darkgrey, lightgreen;
     -fx-cursor: hand;
-    -fx-border-style: solid;
-    -fx-border-width: 0.5;
-    -fx-border-color: green;
+    -fx-background-insets: 0, 0 1 1 0;
 }
 
 /* BUTTONS */
