@@ -7,4 +7,3 @@ target/
 # Project
 logs/
 *.log
-*.properties
