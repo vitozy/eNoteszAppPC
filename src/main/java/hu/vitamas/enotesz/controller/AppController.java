@@ -76,6 +76,7 @@ public class AppController implements Initializable {
 		exitBtn.setOnMouseClicked(e -> {
 			try {
 				Platform.exit();
+				System.exit(0);
 			} catch (Exception ex) {
 				logger.error("Exit failed", ex);
 			}

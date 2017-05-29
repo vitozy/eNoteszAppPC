@@ -114,6 +114,7 @@ public class OverviewController implements Initializable {
 		exitBtn.setOnMouseClicked(e -> {
 			try {
 				Platform.exit();
+				System.exit(0);
 			} catch (Exception e1) {
 				logger.error("Exit error", e1);
 			}

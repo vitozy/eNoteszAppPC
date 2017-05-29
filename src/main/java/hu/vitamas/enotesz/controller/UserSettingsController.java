@@ -106,6 +106,7 @@ public class UserSettingsController implements Initializable {
 			if (response.getSuccess()) {
 				Core.openWebsite("https://enotesz.vitamas.hu/goodbye");
 				Platform.exit();
+				System.exit(0);
 			} else {
 				Alerts.warning(response.getErrors().replaceAll("<br>", " ")).show();
 				logger.error("api delete acc - Status: " + response.getStatus());
