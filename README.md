@@ -3,7 +3,7 @@
 ![Version](https://img.shields.io/badge/version-1.0-green.svg)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-Az eNotesz egy elektronikus notesz applikáció. A program célja, hogy egy helyen és bárhonnan elérhetőek legyenek az eseményeid, a teendőid. A későbbiekben pedig sok más hasonlóan hasznos funkció. Az eNotesz egy webes és desktop applikáció. Ez a repository a desktop applikáció fejlesztése miatt jött létre egy egyetemi beadandó keretében (2017), a későbbiekben azonban tovább szeretném fejleszteni.
+Az TempoNotes (korábban: eNotesz) egy elektronikus notesz applikáció. A program célja, hogy egy helyen és bárhonnan elérhetőek legyenek az eseményeid, a teendőid. A későbbiekben pedig sok más hasonlóan hasznos funkció. Az eNotesz egy webes és desktop applikáció. Ez a repository a desktop applikáció fejlesztése miatt jött létre egy egyetemi beadandó keretében (2017). Továbbfejlesztése már TempoNotes néven történt meg.
 
 A webes projekt weblapja: [temponotes.hu](https://temponotes.hu).<br>
 A fejlesztő [weblapja](http://vitamas.hu) és [blogja](http://blog.vitamas.hu).
