@@ -1,14 +1,14 @@
-## :green_book: eNotesz Desktop App
+## :green_book: TempoNotes Desktop App
 
 ![Version](https://img.shields.io/badge/version-1.0-green.svg)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Az eNotesz egy elektronikus notesz applikáció. A program célja, hogy egy helyen és bárhonnan elérhetőek legyenek az eseményeid, a teendőid. A későbbiekben pedig sok más hasonlóan hasznos funkció. Az eNotesz egy webes és desktop applikáció. Ez a repository a desktop applikáció fejlesztése miatt jött létre egy egyetemi beadandó keretében (2017), a későbbiekben azonban tovább szeretném fejleszteni.
 
-A webes projekt weblapja: [enotesz.vitamas.hu](https://enotesz.vitamas.hu).<br>
+A webes projekt weblapja: [temponotes.hu](https://temponotes.hu).<br>
 A fejlesztő [weblapja](http://vitamas.hu) és [blogja](http://blog.vitamas.hu).
 
-Bővebb információk a [WIKI](https://github.com/vitozy/enotesz-desktop/wiki) oldalon találhatóak.
+Bővebb információk a [WIKI](https://github.com/vitozy/temponotes-desktop/wiki) oldalon találhatóak.
 
 ## Szerzői jog és képinformációk
 
@@ -17,7 +17,7 @@ A projekt Vincze Tamás Zoltán tulajdona, annak bármilyen felhasználása a li
 <b>Vincze Tamás Zoltán © 2017</b><br>
 [www.vitamas.hu](http://www.vitamas.hu) :: prog@vitamas.hu<br>
 
-A projekt 1.0-ás változata a [Debreceni Egyetem Informatikai Kar](https://www.inf.unideb.hu) 2016/17/2-es félév [Programozási technológiák](https://arato.inf.unideb.hu/jeszenszky.peter/wiki/doku.php?id=oktatas:prt) és [Programozási környezetek](https://arato.inf.unideb.hu/jeszenszky.peter/wiki/doku.php?id=oktatas:progkorny) tantárgyak [beadandójaként](https://github.com/vitozy/enotesz-desktop/wiki/Beadandó-információk) készült el. A későbbiekben szeretném tovább fejleszteni.
+A projekt 1.0-ás változata a [Debreceni Egyetem Informatikai Kar](https://www.inf.unideb.hu) 2016/17/2-es félév [Programozási technológiák](https://arato.inf.unideb.hu/jeszenszky.peter/wiki/doku.php?id=oktatas:prt) és [Programozási környezetek](https://arato.inf.unideb.hu/jeszenszky.peter/wiki/doku.php?id=oktatas:progkorny) tantárgyak [beadandójaként](https://github.com/vitozy/enotesz-desktop/wiki/Beadandó-információk) eNotesz projektnéven készült el. A fejlesztés folytatódott TempoNotes néven.
 
 ### Nem saját képek:
 * Font Awesome iconset @ [fontawesome.io](http://fontawesome.io)
@@ -26,10 +26,10 @@ A projekt 1.0-ás változata a [Debreceni Egyetem Informatikai Kar](https://www.
 * Fonts to PNG format @ [fa2png.io](http://fa2png.io)
 * Other icons from Freepik's FlatIcon website. @ [www.flaticon.com](http://flaticon.com)
 
-More information: [wiki/Credits](https://github.com/vitozy/enotesz-desktop/wiki/Credits).
+More information: [wiki/Credits](https://github.com/vitozy/temponotes-desktop/wiki/Credits).
 
 ## Changelog
 
-[Changelog megtekintése](https://github.com/vitozy/enotesz-desktop/wiki/Changelog)
+[Changelog megtekintése](https://github.com/vitozy/temponotes-desktop/wiki/Changelog)
 
 
